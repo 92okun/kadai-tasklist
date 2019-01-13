@@ -12,14 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2019_01_12_052543) do
 
-  create_table "task1s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "content"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_task1s_on_user_id"
-  end
-
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content"
     t.datetime "created_at", null: false
@@ -37,6 +29,5 @@ ActiveRecord::Schema.define(version: 2019_01_12_052543) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "task1s", "users"
   add_foreign_key "tasks", "users"
 end
